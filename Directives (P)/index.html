@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="customDirective">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="autocomplete-jquery-ui.structure.css">
+    <style>
+        .circular{
+            border-radius:50%;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .no-list li{
+            list-style-type: disc;
+        }
+        body, html{
+            text-align: center;
+            background-color: #eee;
+            margin: 0px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body ng-controller="appCtrl">
+    <input type="text" my-autocomplete="repos" placeholder="Buscar repositorio">
+    <ul class="no-list">
+        <li ng-repeat="repo in repos" ng-hide="main_repo && main_repo != repo.name">
+            <div class="circular" back-img="{{repo.owner.avatar_url}}"></div>
+            <h1>{{ repo.name }}</h1>
+        </li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="autocomplete-jquery-ui.js"></script>
+    <script src="angular.min.js "></script>
+    <script src="controller.js "></script>
+
+</body>
+</html>

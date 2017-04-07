@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="toDoList">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.scss">
+    <title>Document</title>
+</head>
+<body ng-controller="toDoController">
+
+    <div class="main-container">
+        <form class="form-container" ng-submit="addAct()">
+            <label class="form-label" for="">Activity title:</label>
+            <input class="form-input" type="text" name="" value="" ng-model="newAct.title">
+            <br>
+            <label class="form-label" for="">Description:</label>
+            <input class="form-input" type="text" name="" value="" ng-model="newAct.descripcion">
+            <br>
+            <label class="form-label" for="">Date:</label>
+            <input style="margin-left: 47px;" class="form-input" type="datetime-local" name="" value="" ng-model="newAct.fecha">
+            <br>
+            <input class="form-button" type="submit" value="Save">
+        </form>
+        <div class="act-container">
+            <ul>
+                <li ng-repeat="actividad in toDo">
+                    <h4 class="act-title">{{actividad.title}}</h4>
+                    <p class="act-content">{{actividad.descripcion}}</p> - <span class="act-info">{{actividad.fecha | date:'short'}}</span>
+                    <div class="act-buttons">
+                        <a href="#" class="buttons">Edit</a>
+                        <a href="#" class="buttons">Delete</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button ng-click="toDo = []">Limpiar</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="angular.min.js "></script>
+    <script src="angular-local-storage.min.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>

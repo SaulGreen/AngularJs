@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myFirstApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hola Controller</title>
+    </head>
+    <body ng-controller="firstController">
+
+        {{"Hola " + nombre}}
+
+        <input type="text" name="" value="" ng-model="nombre">
+        <br>
+        <input type="text" name="" value="" ng-model="newComment.text">
+        <br>
+        <input type="text" name="" value="" ng-model="newComment.username">
+        <button type="button" name="button" ng-click="addComment()">Add Comment</button>
+        <h3>Comentario</h3>
+        <ul>
+            <li ng-repeat="comment in comments">
+                {{comment.text}} - <strong>{{comment.username}}</strong>
+            </li>
+        </ul>
+
+
+
+        <script src="angular.min.js "></script>
+        <script src="controller.js "></script>
+
+    </body>
+</html>

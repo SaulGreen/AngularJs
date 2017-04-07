@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="customDirective">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .circular{
+            border-radius:50%;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body ng-controller="appCtrl">
+
+    <ul class="no-list">
+        <li ng-repeat="repo in repos">
+            <div class="circular" back-img="{{repo.owner.avatar_url}}"></div>
+            <h1>{{ repo.name }}</h1>
+        </li>
+    </ul>
+
+    <script src="angular.min.js "></script>
+    <script src="controller.js "></script>
+
+</body>
+</html>
